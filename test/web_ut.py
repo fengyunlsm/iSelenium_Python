@@ -59,10 +59,11 @@ class ISelenium(unittest.TestCase):
         self.driver.get("https://ww.baidu.com")
         print('打开浏览器，访问 www.baidu.com')
         time.sleep(5)
-        assert f'百度一下' in self.driver.title
+        assert '百度一下' in self.driver.title
+        print self.driver.title
 
         elem = self.driver.find_element_by_name("wd")
         elem.send_keys(f'{search_keyword}{Keys.RETURN}')
-        print(f'搜索关键词~{search_keyword}')
+        print('搜索关键词~{search_keyword}')
         time.sleep(5)
         self.assertTrue(f'{search_keyword}' in self.driver.title, msg=f'{testcase_name}校验点 pass')
