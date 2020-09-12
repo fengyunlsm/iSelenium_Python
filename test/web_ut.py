@@ -1,4 +1,5 @@
-# -*- coding: utf-8 -*
+# !/usr/bin/env Python
+# coding=utf-8
 import configparser
 import os
 import time
@@ -74,4 +75,4 @@ class ISelenium(unittest.TestCase):
         confirm.click()
         print('搜索关键词~{}'.format(search_keyword))
         time.sleep(5)
-        self.assertTrue('{search_keyword}' in self.driver.title)
+        self.assertTrue(search_keyword in self.driver.title)
