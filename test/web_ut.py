@@ -8,12 +8,16 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 
+import sys
+sys.stdout.flush()
+
 
 class ISelenium(unittest.TestCase):
     # 读入配置文件
     def get_config(self):
         config = configparser.ConfigParser()
         config.read(os.path.join(os.environ['HOME'], 'iselenium.ini'))   #  /root
+        print (os.path.join(os.environ['HOME'], 'iselenium.ini'))
         return config
 
     def tearDown(self):
