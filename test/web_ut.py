@@ -9,8 +9,9 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 
 import sys
-sys.stdout.flush()
-
+if sys.getdefaultencoding() != 'utf-8':
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
 
 class ISelenium(unittest.TestCase):
     # 读入配置文件
