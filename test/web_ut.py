@@ -63,7 +63,7 @@ class ISelenium(unittest.TestCase):
         print self.driver.title
 
         elem = self.driver.find_element_by_name("wd")
-        elem.send_keys(f'{search_keyword}{Keys.RETURN}')
+        elem.send_keys('{search_keyword}{Keys.RETURN}')
         print('搜索关键词~{search_keyword}')
         time.sleep(5)
         self.assertTrue('{search_keyword}' in self.driver.title, msg=f'{testcase_name}校验点 pass')
