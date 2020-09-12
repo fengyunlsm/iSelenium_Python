@@ -1,5 +1,7 @@
 # !/usr/bin/env Python
-# coding=utf-8
+# -*- coding: utf-8 -*-
+
+
 import configparser
 import os
 import time
@@ -14,6 +16,8 @@ if sys.getdefaultencoding() != 'utf-8':
     reload(sys)
     sys.setdefaultencoding('utf-8')
 
+reload(sys)
+sys.setdefaultencoding('utf-8')
 class ISelenium(unittest.TestCase):
     # 读入配置文件
     def get_config(self):
