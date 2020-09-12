@@ -62,14 +62,16 @@ class ISelenium(unittest.TestCase):
         :param testcase_name: 测试用例名 (str)
         """
 
-        self.driver.get("https://ww.baidu.com")
+        self.driver.get("https://www.baidu.com")
         print('打开浏览器，访问 www.baidu.com')
         time.sleep(5)
         assert '百度一下' in self.driver.title
         print self.driver.title
 
         elem = self.driver.find_element_by_name("wd")
-        elem.send_keys('{search_keyword}{Keys.RETURN}')
-        print('搜索关键词~{search_keyword}')
+        confirm = self.driver.find_element_by_id("su")
+        elem.send_keys(search_keyword)
+        confirm.click()
+        print('搜索关键词~{}'.format(search_keyword))
         time.sleep(5)
         self.assertTrue('{search_keyword}' in self.driver.title)
