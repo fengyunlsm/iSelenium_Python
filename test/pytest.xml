@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite errors="0" failures="2" hostname="FYYX-2019VXOSDQ" name="pytest" skipped="0" tests="2" time="1.038" timestamp="2020-09-11T23:39:53.634442"><testcase classname="web_ut.ISelenium" name="test_webui_1" time="0.005"><failure message="configparser.NoSectionError: No section: &apos;driver&apos;">self = &lt;test.web_ut.ISelenium testMethod=test_webui_1&gt;
+
+    def setUp(self):
+        config = self.get_config()
+    
+        # 控制是否采用无界面形式运行自动化测试
+        try:
+            using_headless = os.environ[&quot;using_headless&quot;]
+        except KeyError:
+            using_headless = None
+            print(&apos;没有配置环境变量 using_headless, 按照有界面方式运行自动化测试&apos;)
+    
+        chrome_options = Options()
+        if using_headless is not None and using_headless.lower() == &apos;true&apos;:
+            print(&apos;使用无界面方式运行&apos;)
+            chrome_options.add_argument(&quot;--headless&quot;)
+    
+&gt;       self.driver = webdriver.Chrome(executable_path=config.get(&apos;driver&apos;, &apos;chrome_driver&apos;),
+                                       options=chrome_options)
+
+web_ut.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+d:\python\lib\configparser.py:781: in get
+    d = self._unify_values(section, vars)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;configparser.ConfigParser object at 0x032B6808&gt;, section = &apos;driver&apos;
+vars = None
+
+    def _unify_values(self, section, vars):
+        &quot;&quot;&quot;Create a sequence of lookups with &apos;vars&apos; taking priority over
+        the &apos;section&apos; which takes priority over the DEFAULTSECT.
+    
+        &quot;&quot;&quot;
+        sectiondict = {}
+        try:
+            sectiondict = self._sections[section]
+        except KeyError:
+            if section != self.default_section:
+&gt;               raise NoSectionError(section) from None
+E               configparser.NoSectionError: No section: &apos;driver&apos;
+
+d:\python\lib\configparser.py:1149: NoSectionError</failure></testcase><testcase classname="web_ut.ISelenium" name="test_webui_2" time="0.003"><failure message="configparser.NoSectionError: No section: &apos;driver&apos;">self = &lt;test.web_ut.ISelenium testMethod=test_webui_2&gt;
+
+    def setUp(self):
+        config = self.get_config()
+    
+        # 控制是否采用无界面形式运行自动化测试
+        try:
+            using_headless = os.environ[&quot;using_headless&quot;]
+        except KeyError:
+            using_headless = None
+            print(&apos;没有配置环境变量 using_headless, 按照有界面方式运行自动化测试&apos;)
+    
+        chrome_options = Options()
+        if using_headless is not None and using_headless.lower() == &apos;true&apos;:
+            print(&apos;使用无界面方式运行&apos;)
+            chrome_options.add_argument(&quot;--headless&quot;)
+    
+&gt;       self.driver = webdriver.Chrome(executable_path=config.get(&apos;driver&apos;, &apos;chrome_driver&apos;),
+                                       options=chrome_options)
+
+web_ut.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+d:\python\lib\configparser.py:781: in get
+    d = self._unify_values(section, vars)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;configparser.ConfigParser object at 0x032F3568&gt;, section = &apos;driver&apos;
+vars = None
+
+    def _unify_values(self, section, vars):
+        &quot;&quot;&quot;Create a sequence of lookups with &apos;vars&apos; taking priority over
+        the &apos;section&apos; which takes priority over the DEFAULTSECT.
+    
+        &quot;&quot;&quot;
+        sectiondict = {}
+        try:
+            sectiondict = self._sections[section]
+        except KeyError:
+            if section != self.default_section:
+&gt;               raise NoSectionError(section) from None
+E               configparser.NoSectionError: No section: &apos;driver&apos;
+
+d:\python\lib\configparser.py:1149: NoSectionError</failure></testcase></testsuite></testsuites>
